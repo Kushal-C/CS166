@@ -103,10 +103,10 @@ public class MyKnapsack {
         System.out.println("Passed in Encrypted Text: " + temp);
     }
 
-    public static void main(String[] args)
+  /*  public static void main(String[] args)
     {
        MyKnapsack a = new  MyKnapsack(4,19, 83);
     }
 
-
+ */
 }
