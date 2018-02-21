@@ -2,6 +2,8 @@ import java.awt.*;
 import java.math.BigInteger;
 import java.util.Scanner;
 
+/* Example is currently bugged, but implementation is almost there */
+
 public class MyRSA {
 
     BigInteger n;
@@ -22,11 +24,6 @@ public class MyRSA {
         this.e = BigInteger.valueOf(e);
         d = phi.multiply(new BigInteger("2")).divide(this.e);
 
-        Scanner scanner = new Scanner(System.in);
-        System.out.println("Enter a message to encrypt");
-        String message = scanner.nextLine();
-
-        encrypt(message);
 
     }
 
@@ -59,15 +56,20 @@ public class MyRSA {
     {
         for(int i = 0; i < arr.length; i++)
         {
-            System.out.print(arr[i]);
+            System.out.print(arr[i] + " ");
         }
         System.out.println();
     }
 
     public static void main(String[] args)
     {
-        MyRSA myRSA = new MyRSA(11,3,3);
-        myRSA.encrypt("Hello");
+        MyRSA myRSA = new MyRSA(11,17,3);
+
+        Scanner scanner = new Scanner(System.in);
+        System.out.println("Enter a message to encrypt");
+        String message = scanner.nextLine();
+
+        myRSA.encrypt(message);
         myRSA.decrypt();
     }
 }
